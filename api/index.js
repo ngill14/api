@@ -1,9 +1,5 @@
 var mongo = require('mongodb').MongoClient;
-<<<<<<< HEAD
 var mongoURL = 'mongodb://kb_admin:winning@linus.mongohq.com:10071/kb_dev';
-=======
-var mongoURL = 'mongodb://127.0.0.1:27017/kb';
->>>>>>> FETCH_HEAD
 
 exports.indexPage = function(req, res) {
   res.render('index', { title: 'Accredited Schools List' });
