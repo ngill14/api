@@ -5,5 +5,7 @@ module.exports = function(app) {
 	app.get('/_/schools/name/:schoolName', api.schoolByName); // Get a school by name.
 	app.get('/_/schools/:partial', api.schoolNameContaining); // Get list of schools with given containing string.
 
+
+	app.get('/policy', api.policy); // Private Policy
 	app.get('/', api.indexPage); // Index
 };

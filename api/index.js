@@ -5,6 +5,10 @@ exports.indexPage = function(req, res) {
   res.render('index', { title: 'Accredited Schools List' });
 };
 
+exports.policy = function(req, res) {
+  res.render('pp');
+};
+
 exports.getSchools = function(req, res) {
 	mongo.connect(mongoURL, function (err, db) {
     if (err) {
