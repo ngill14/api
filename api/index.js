@@ -46,7 +46,10 @@ exports.schoolNameContaining = function(req, res) {
     } else {
       console.log('Successfully Connected to the Database');
     }
-    var find = req.params.partial;
+    
+    var partial = req.params.partial.replace(/,/gi, ')(?=.*');
+    
+    var find = '(?=.*' + partial + ').*$';
     var schools = db.collection('schools');   
     schools.find({schoolName: {$regex: find, $options: "si"}},{ _id: 0}).toArray(function(err, results) {
       res.json(results);
